@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     default: 'PeaceCoParent — Co-parent without the conflict',
     template: '%s | PeaceCoParent',
   },
-  description: 'Catch the message before you regret it. coaches your drafts, logs everything court-ready, shared calendar — $14/mo, both parents.',
+  description: 'Catch the message before you regret it. PeaceCoach reviews your drafts, logs everything court-ready, shared calendar — $14/mo, both parents.',
   keywords: [
     'co-parenting app', 'co-parent app', 'shared custody app',
     'OurFamilyWizard alternative', 'OurFamilyWizard cheaper', 'best co-parenting app 2026',

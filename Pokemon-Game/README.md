@@ -4,4 +4,4 @@ Parprogrammeringsoppgave på GET Academy. Tekstbasert spill i C# — velg Pokém
 
 Filer er delt opp i egne klasser (`Battle`, `Shop`, `Trainer`, osv.) i stedet for én lang `Program.cs`.
 
-Ingen `.csproj` her — det er arkivert kildekode fra skolen. Lim filene inn i et konsollprosjekt i Visual Studio for å kjøre.
+Ingen `.csproj` her — lim filene inn i et konsollprosjekt i Visual Studio for å kjøre.

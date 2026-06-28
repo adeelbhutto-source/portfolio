@@ -4,7 +4,7 @@ Norsk samtaleprogram i Python. Eget nevralnett og enkel minnelagring i JSON.
 
 ## Filer
 
-- `buddy_v9.py` — chat, trening, minne
+- `buddy_v9.py` — chat og minne
 - `buddy_consolidate.py` — rydder i minnefiler
 
 ## Kjøre
