@@ -2,7 +2,7 @@
 
 Eget runtime for en enkel assistent. Poenget var å skille «hvordan appen kjører» fra «hvilken motor som svarer» — så jeg kan bytte backend uten å skrive om alt.
 
-Skrevet som clean-room (ingen copy-paste fra andre prosjekter). [SPEC.md](SPEC.md) forklarer tanken.
+Skrevet fra scratch. [SPEC.md](SPEC.md) forklarer tanken.
 
 ## Innhold
 
