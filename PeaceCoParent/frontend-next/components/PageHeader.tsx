@@ -1,5 +1,5 @@
 /**
- * Reusable page header for all internal app pages.
+ * Reusable page header for app pages.
  * Provides consistent visual treatment: dark warm-text background,
  * label badge, title, optional description, and optional action slot.
  */

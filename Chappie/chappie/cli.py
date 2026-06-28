@@ -9,7 +9,7 @@ def main():
 
     # Registrer noen enkle testkommandoer
     runtime.commands.register("ping", lambda: "pong", help="Returnerer pong")
-    runtime.commands.register("whoami", lambda: "Chappie (clean-room demo)", help="Viser navn")
+    runtime.commands.register("whoami", lambda: "Chappie", help="Viser navn")
 
     session_id = "default"
     print("Chappie REPL — skriv /exit for å avslutte, /ping for kommando.")

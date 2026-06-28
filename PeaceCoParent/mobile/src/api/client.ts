@@ -1,6 +1,5 @@
 import * as SecureStore from 'expo-secure-store';
 
-// Change this to your Railway backend URL in production
 export const API_BASE = 'https://api.peacecoparent.com/api';
 
 export async function getAccessToken() {

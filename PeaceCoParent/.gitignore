@@ -15,5 +15,3 @@ build/
 *.pem
 .expo/
 google-service-account.json
-railway.toml
-Procfile

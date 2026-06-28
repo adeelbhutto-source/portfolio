@@ -96,7 +96,7 @@ pip-log.txt
 Thumbs.db
 desktop.ini
 
-# AI training data / memory (never publish)
+# Generated / local files
 train*.txt
 train*.jsonl
 eval*.txt
@@ -114,12 +114,6 @@ data/vocab.json
 test_output.pdf
 .expo/
 google-service-account.json
-jest.config.js
-**/MIGRATIONS.md
-railway.toml
-Procfile
-.railwayignore
-eas.json
 
 # Misc
 *.log

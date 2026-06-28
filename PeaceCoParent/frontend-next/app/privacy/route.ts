@@ -107,7 +107,7 @@ export function GET() {
         <div class="def-list" style="margin-top:12px">
           <div class="def-row"><span class="def-key">Neon (PostgreSQL):</span> Database hosting (EU/US).</div>
           <div class="def-row"><span class="def-key">Vercel:</span> Hosting and serverless functions.</div>
-          <div class="def-row"><span class="def-key">Railway:</span> Backend hosting.</div>
+          <div class="def-row"><span class="def-key">Hosting:</span> Backend and frontend infrastructure.</div>
           <div class="def-row"><span class="def-key">Stripe:</span> Payment processing.</div>
           <div class="def-row"><span class="def-key">Resend:</span> Transactional email delivery.</div>
           <div class="def-row"><span class="def-key">AWS S3:</span> Document file storage.</div>
