@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "types": ["jest", "node"],
+    "paths": {
+      "@peacecoparent/shared": ["../shared/src/index.ts"],
+      "@peacecoparent/shared/*": ["../shared/src/*"]
+    }
+  },
+  "include": ["src", "../shared/src"],
+  "exclude": ["node_modules", "dist", "src/__tests__"]
+}

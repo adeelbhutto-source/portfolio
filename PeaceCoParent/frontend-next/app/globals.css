@@ -1,0 +1,272 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* ── V3 design tokens (new landing + marketing pages) ── */
+  --bg:           #F1ECDF;
+  --bg-deep:      #E7E0CE;
+  --bg-soft:      #F7F3E9;
+  --card:         #FFFEFA;
+  --green:        #1E3F2C;
+  --green-deep:   #14301F;
+  --green-soft:   #2D5944;
+  --green-tint:   #D5DECA;
+  --green-mute:   #4C6856;
+  --ink:          #16201A;
+  --ink-soft:     #4A5550;
+  --ink-mute:     #7B847E;
+  --clay:         #C76A3F;
+  --clay-soft:    #E89968;
+  --clay-tint:    #F4D9C2;
+  --warn:         #B84B2C;
+  --warn-tint:    #F2D4C7;
+  --ok:           #2D7A52;
+  --border:       #E1D9C6;
+  --border-soft:  #EBE4D2;
+  --serif:        var(--font-newsreader), "Newsreader", ui-serif, Georgia, serif;
+  --sans:         var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --mono:         var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, Menlo, monospace;
+
+  /* PeaceCoParent legacy tokens — aliased to V3 tokens */
+  --pcp-cream:       var(--bg);
+  --pcp-cream-mid:   var(--bg-deep);
+  --pcp-sage:        var(--green);
+  --pcp-sage-light:  var(--green-tint);
+  --pcp-sage-dark:   var(--green-deep);
+  --pcp-sage-bg:     var(--green-tint);
+  --pcp-warm-text:   var(--ink);
+  --pcp-mid-text:    var(--ink-soft);
+  --pcp-soft-border: var(--border);
+  --pcp-white:       var(--card);
+  --pcp-sidebar-bg:  var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+@theme {
+  --color-pcp-cream:       #F1ECDF;
+  --color-pcp-cream-mid:   #E7E0CE;
+  --color-pcp-sage:        #1E3F2C;
+  --color-pcp-sage-light:  #D5DECA;
+  --color-pcp-sage-dark:   #14301F;
+  --color-pcp-sage-bg:     #D5DECA;
+  --color-pcp-warm-text:   #16201A;
+  --color-pcp-mid-text:    #4A5550;
+  --color-pcp-soft-border: #E1D9C6;
+  --color-pcp-white:       #FFFEFA;
+  --color-pcp-sidebar-bg:  #16201A;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    background-color: rgb(248 250 252);
+    color: rgb(30 41 59);
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+  h1, h2, h3, h4, h5 {
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Subtle paper texture */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(20,30,20,.025) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: .5;
+  z-index: 0;
+}
+
+/* V3 typography helpers */
+.pcp-display {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.0;
+}
+.pcp-display em { font-style: normal; font-weight: 400; color: var(--clay); }
+.pcp-eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.pcp-mono { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.04em; }
+.pcp-wrap { max-width: 1320px; margin: 0 auto; padding: 0 56px; }
+.pcp-page { background: var(--bg); min-height: 100vh; font-family: var(--sans); color: var(--ink); }
+
+/* PeaceCoParent legacy button helpers */
+.pcp-btn-secondary {
+  border: 1.5px solid var(--border);
+  color: var(--ink-soft);
+  background: none;
+  transition: all 0.15s;
+  font-family: inherit;
+  cursor: pointer;
+}
+.pcp-btn-secondary:hover {
+  border-color: var(--green);
+  color: var(--green-deep);
+}
+.pcp-btn-primary {
+  background: var(--green);
+  color: white;
+  border: none;
+  transition: all 0.15s;
+  font-family: inherit;
+  cursor: pointer;
+}
+.pcp-btn-primary:hover {
+  background: var(--green-deep);
+}
+.pcp-btn-primary, .pcp-btn-secondary {
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+.pcp-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  background: var(--bg);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.pcp-input:focus {
+  border-color: var(--green);
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Custom scrollbar — discreet on dark sidebar ───────────────────── */
+.pcp-sidebar-scroll::-webkit-scrollbar { width: 6px; }
+.pcp-sidebar-scroll::-webkit-scrollbar-track { background: transparent; }
+.pcp-sidebar-scroll::-webkit-scrollbar-thumb {
+  background: oklch(40% 0.02 80);
+  border-radius: 3px;
+}
+.pcp-sidebar-scroll::-webkit-scrollbar-thumb:hover { background: oklch(48% 0.02 80); }
+.pcp-sidebar-scroll { scrollbar-width: thin; scrollbar-color: oklch(40% 0.02 80) transparent; }
+
+/* ── Global mobile fixes ─────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  /* Prevent horizontal overflow on all pages */
+  .flex-1 { min-width: 0; }
+
+  /* Scale down large DM Serif headings */
+  [style*="font-size: 30px"], [style*="font-size: 28px"] {
+    font-size: clamp(22px, 6vw, 28px) !important;
+  }
+  [style*="font-size: 38px"], [style*="font-size: 36px"] {
+    font-size: clamp(26px, 7vw, 36px) !important;
+  }
+  [style*="font-size: 22px"] {
+    font-size: clamp(18px, 5vw, 22px) !important;
+  }
+
+  /* Header grids that have an icon on the right — stack to 1 col */
+  .mb-6.grid.items-center {
+    grid-template-columns: 1fr !important;
+  }
+  /* Hide decorative icon column on mobile */
+  .mb-6.grid.items-center > div:last-child:not(:first-child) > svg {
+    display: none;
+  }
+
+  /* Generic 2-col grids in page headers */
+  div[style*="gridTemplateColumns: '1fr auto'"],
+  div[style*='gridTemplateColumns: "1fr auto"'] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .max-w-5xl { max-width: 100% !important; }
+}
+
+/* ── V3 Mobile Responsiveness ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .pcp-wrap { padding: 0 20px !important; }
+  .flex-1 { min-width: 0; }
+
+  /* Only collapse CONTENT two-column layouts — NOT calendar/table grids */
+  div[style*="1.4fr 1fr"],
+  div[style*="1fr 1.4fr"],
+  div[style*="1.6fr 1fr"],
+  div[style*="1fr 1.6fr"],
+  div[style*="1.3fr 1fr"],
+  div[style*="1fr 1.3fr"],
+  div[style*="1fr 320px"],
+  div[style*="1fr 1fr; gap"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 4-col stat strip → 2 cols */
+  div[style*="repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Pricing 3-col plans → 1 col */
+  div[style*="1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* MessageDuet PAUSE column: hide */
+  div[style*="1fr 80px 1fr"] > div:nth-child(2) {
+    display: none !important;
+  }
+  div[style*="1fr 80px 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Large display fonts */
+  .pcp-display[style*="font-size: 80"],
+  .pcp-display[style*="font-size: 96"],
+  .pcp-display[style*="font-size: 104"] {
+    font-size: clamp(36px, 10vw, 56px) !important;
+  }
+  .pcp-display[style*="font-size: 54"],
+  .pcp-display[style*="font-size: 56"],
+  .pcp-display[style*="font-size: 64"] {
+    font-size: clamp(28px, 8vw, 44px) !important;
+  }
+
+  /* Dashboard/app hero 1fr auto grid */
+  div[style*="1fr auto"][style*="gap"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Court-report date picker 1fr 1fr auto */
+  div[style*="1fr 1fr auto"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Auth pages mobile — show as single column */
+@media (max-width: 1023px) {
+  .pcp-auth-page { display: block !important; }
+  .pcp-auth-form { padding: 32px 24px !important; width: 100% !important; }
+}

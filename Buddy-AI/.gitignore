@@ -1,0 +1,14 @@
+*.pt
+*.pkl
+*.bin
+buddy_*.json
+buddy_*.csv
+buddy_*.txt
+train*.txt
+train*.jsonl
+eval*.txt
+tokenizer.json
+__pycache__/
+.venv/
+.env
+.env.*

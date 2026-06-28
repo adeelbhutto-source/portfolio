@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "PeaceCoParent",
+    "slug": "peacecoparent",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "peacecoparent",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#f8f4ee"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.peacecoparent.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#568960"
+      },
+      "package": "com.peacecoparent.app",
+      "targetSdkVersion": 35,
+      "versionCode": 15
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-font",
+      ["expo-build-properties", { "android": { "targetSdkVersion": 35 } }],
+      "expo-notifications"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "2a6a9665-5cb3-4feb-8bad-f1f815796f91"
+      }
+    },
+    "owner": "peacecoparent"
+  }
+}
