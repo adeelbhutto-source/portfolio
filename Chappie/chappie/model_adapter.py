@@ -5,8 +5,8 @@ from typing import List, Dict
 class ModelAdapter(ABC):
     """Abstrakt grensesnitt for modelladaptere.
 
-    Implementasjoner må være originale og kan kalle eksterne backends eller
-    gi lokal, regelbasert respons for testing.
+    Implementasjoner kan kalle eksterne backends eller gi lokal,
+    regelbasert respons for testing.
     """
 
     @abstractmethod
