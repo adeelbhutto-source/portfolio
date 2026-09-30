@@ -22,15 +22,15 @@ A text-based console game built around separate classes instead of putting all l
 ## What the battle flow demonstrates
 
 `Battle.Start()`:
+
 - finds the first usable Pokémon
-- loops until the battle ends
+- keeps battle state inside a loop
 - handles attack, healing, catching and escape
-- updates HP/inventory/money
-- uses separate helper methods for attacks
+- updates HP, inventory and money
+- delegates attack behaviour to helper methods
+- changes catch probability based on the ball and remaining HP
 
-The catch probability changes based on the ball value and the wild Pokémon's remaining HP.
-
-## What I can discuss from this project
+## What I can explain
 
 - why the code is split into classes
 - object state and mutations
@@ -38,7 +38,20 @@ The catch probability changes based on the ball value and the wild Pokémon's re
 - switch-based user input
 - loops and battle termination conditions
 - simple probability/randomness
-- what pair programming changed about how we solved the task
+- the trade-offs we made in a small pair-programming exercise
+
+## Things I would improve today
+
+Reviewing the code now, I would change several things:
+
+- reuse the existing `_rng` instance everywhere instead of creating a new `Random` inside `EnemyAttacks`
+- apply move accuracy consistently to enemy attacks as well as player attacks
+- separate console input/output from battle rules so the logic is easier to test
+- avoid allowing money to become negative in `SpendMoney`
+- add unit tests for catch probability, inventory use and battle termination
+- split the larger `Start()` method into smaller actions
+
+Those are useful examples of how my code-review habits have improved since the course project.
 
 ## Running
 
