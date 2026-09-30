@@ -27,11 +27,16 @@ A small console program for adding movies and displaying the catalogue.
 
 ## What I would improve now
 
-This is an early learning project. If rebuilding it today, I would:
-- use `int.TryParse` instead of retrying inside a `catch`
-- make the movie list private readonly
-- add search/edit/delete
-- add tests around catalogue operations
-- separate input parsing further from business logic
+This is an early learning project, and I deliberately keep that visible.
 
-Keeping those limitations visible is intentional because the project shows where I started and what I would change with what I know now.
+If rebuilding it today, I would:
+
+- use `int.TryParse` instead of catching `FormatException` and retrying only once
+- make the movie list `private readonly`
+- handle invalid menu choices explicitly instead of treating every unknown input as exit
+- separate input parsing further from catalogue/business logic
+- add search, edit and delete operations
+- add tests around catalogue operations and validation
+- remove unused `using` directives
+
+The project is small, but it is useful for showing progression: I can explain both the original approach and the refactoring choices I would make now.
