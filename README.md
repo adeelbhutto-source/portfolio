@@ -1,10 +1,27 @@
-# Adil Bhutto — Portfolio
+# Adil Bhutto — Technical Portfolio
 
-I completed **Start IT at GET Academy**, a 20-week full-time programme in programming fundamentals. This repository contains course work, team/pair-programming projects and larger experiments.
+I completed **Start IT at GET Academy**, a 20-week full-time programme in programming fundamentals. This repository contains course work, team/pair-programming projects, technical experiments and an ongoing Windows support lab.
 
-The purpose of this portfolio is to make a distinction between:
-1. smaller projects that show programming fundamentals directly, and
-2. larger projects where AI-assisted implementation has been part of the workflow.
+I use this portfolio to separate three things clearly:
+
+1. **course projects** that show programming fundamentals,
+2. **hands-on labs / experiments** that show breadth and technical curiosity,
+3. **larger AI-assisted product work** where the value is architecture, integrations and product delivery rather than claiming manual authorship of every line.
+
+## Currently building — Windows Support Lab
+
+**[Windows-Support-Lab](./Windows-Support-Lab)** · PowerShell · Windows · networking · troubleshooting
+
+A practical support lab built around real troubleshooting sequences rather than a frontend.
+
+Topics include:
+- IP configuration and layered network triage
+- DNS troubleshooting
+- Windows services
+- support-data collection
+- structured troubleshooting notes
+
+The starter scripts contain TODOs intentionally. The goal is to complete them through hands-on testing and record what each result means.
 
 ## Recommended code walkthroughs
 
@@ -47,6 +64,20 @@ Good starting points:
 
 What it demonstrates: basic OOP, lists, console input, validation and separation of responsibilities.
 
+## Technical experiments
+
+### Chappie — Python
+**Code:** [Chappie](./Chappie)
+
+A small learning experiment around:
+- runtime orchestration
+- adapter interfaces
+- in-memory session state
+- slash-command routing
+- a small PyTorch transformer experiment
+
+It is presented as an experiment, with limitations and next steps documented in the project README.
+
 ## Larger product project
 
 ### PeaceCoParent — full-stack SaaS
@@ -64,17 +95,17 @@ Concrete code entry points:
 - [backend/src/routes/subscriptions.ts](./PeaceCoParent/backend/src/routes/subscriptions.ts) — Stripe checkout, billing portal and webhook handling
 - [TECHNICAL_WALKTHROUGH.md](./PeaceCoParent/TECHNICAL_WALKTHROUGH.md) — guided technical overview
 
-## Other experiments
+## Breadth across the portfolio
 
-- **[Chappie](./Chappie)** — Python experiment around runtime/session/model-adapter separation.
-- **[Buddy-AI](./Buddy-AI)** — Python conversational experiment and JSON-based memory processing.
-- **[GET Academy exercises](./GET-Academy-Exercises)** — smaller C# fundamentals and exercises.
-
-These experiments are included for completeness, but the three recommended walkthroughs above are the clearest starting points for reviewing my programming fundamentals.
-
-## Technologies used across the repository
-
-C# · JavaScript · TypeScript · Python · HTML/CSS · Node.js · Express · Next.js · PostgreSQL · Git/GitHub
+| Area | Examples |
+| --- | --- |
+| Windows / support | Windows Support Lab, PowerShell, network/DNS/service troubleshooting |
+| C# | Pokemon Game, Movie Catalog, GET Academy exercises |
+| JavaScript | Musikkbibliotek MVC |
+| TypeScript / Node | PeaceCoParent backend |
+| Python | Chappie |
+| Data / backend | PostgreSQL, API integrations |
+| Workflow | Git, GitHub, testing/refactoring notes |
 
 ## Career direction
 
