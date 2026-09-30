@@ -1,33 +1,44 @@
-Chappie — Teknisk spesifikasjon
+# Chappie — technical notes
 
-Mål
-- Lage et assistent-runtime med tydelig skille mellom kjøretid og svar-motor.
-- Implementasjonen skal ha REPL, sesjonshåndtering, pluggbar adapter og kommandoer — skrevet fra bunnen av.
+## Goal
 
-Krav (høy nivå)
-- Pluggbar `ModelAdapter`‑grensesnitt: bytte backend uten å endre runtime.
-- Enkel `SessionStore` for konversasjonslogg per session id.
-- `CommandRegistry` for å registrere og kjøre slash‑kommandoer (f.eks. `/ping`).
-- `ChappieRuntime` som orkestrerer input → motor → output, inkl. kommando‑deteksjon.
-- En lett CLI for manuell testing og demonstrasjon.
+Explore a small assistant runtime with a clear separation between the runtime and the component that generates responses.
 
-Designprinsipper
-- Original kode, lesbare APIer, enkel å utvide.
-- Minimale eksterne avhengigheter (standardbiblioteket der det er mulig).
+## High-level requirements
 
-Komponentoversikt
-- `ModelAdapter` (abstrakt): `generate(prompt: str, history: list[dict]) -> str`
-- `SessionStore`: `create_session(id)`, `add_message(id, role, text)`, `get_history(id)`
-- `CommandRegistry`: `register(name, func)`, `run(name, *args)`
-- `ChappieRuntime`: `handle_message(session_id, message)` — gjenkjenner kommandoer, bruker `ModelAdapter` ellers.
-- `cli` modul: enkel REPL for interaksjon.
+- pluggable `ModelAdapter` interface so a backend can be changed without rewriting the runtime
+- simple `SessionStore` for conversation history per session ID
+- `CommandRegistry` for slash commands such as `/ping`
+- `ChappieRuntime` coordinating input → command/model → output
+- lightweight CLI for manual testing
 
-Dataplattform
-- Demo-data holdes lokalt i minnet.
-- Ingen ekstern logging uten eksplisitt valg.
+## Design ideas
 
-Neste steg
-1. Scaffold prosjekt (pakke + README + requirements).
-2. Implementer `ModelAdapter`, `SessionStore`, `CommandRegistry`, `ChappieRuntime`.
-3. Legg til flere eksempel-backends og utvid CLI.
-4. Dokumenter hvordan å bytte motor og utvide med nye backends.
+- keep components small enough to understand individually
+- minimise dependencies where practical
+- make backend replacement explicit through an interface
+- keep the first version local and easy to test
+
+## Components
+
+- `ModelAdapter`: `generate(prompt, history) -> str`
+- `SessionStore`: creates sessions and stores message history
+- `CommandRegistry`: registers and executes slash commands
+- `ChappieRuntime`: orchestrates the message flow
+- CLI: basic REPL for manual interaction
+
+## Current limitations
+
+- session data is only stored in memory
+- message objects are simple dictionaries
+- demo adapters are intentionally basic
+- the PyTorch model experiment is separate from a complete training/inference pipeline
+- more automated tests are needed
+
+## Possible next steps
+
+1. Add unit tests for runtime/session/command behaviour.
+2. Add a persistent session implementation behind the same interface.
+3. Add another adapter implementation.
+4. Improve error handling and typing.
+5. Document the PyTorch experiment separately from the runtime.
