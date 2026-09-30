@@ -1,4 +1,4 @@
-"""Lett, original implementasjon av en enkel kausal transformer.
+"""Lett implementasjon av en enkel kausal transformer for læring.
 
 Design: enkel, lett å lese, ment for små eksperimenter og som referanseimplementasjon.
 """
